@@ -46,9 +46,15 @@ authors = [
     "Adam Weeden <adamweeden@gmail.com>",
     "Chay Choong <chaychoong@gmail.com>",
 ]
-repository = "https://github.com/TheCleric/coverage-lcov"
+repository = "https://github.com/JohannesBuchner/coverage-lcov"
 readme = "README.md"
 keywords = ["coverage"]
+dependencies = [
+    "types-toml",
+    "click>=7.1.2",
+    "coverage>=7.0",
+    "toml",
+]
 
 [tool.poetry.scripts]
 coverage-lcov = "coverage_lcov.cli:main"
