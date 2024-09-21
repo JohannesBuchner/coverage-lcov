@@ -31,7 +31,7 @@ jobs:
           python-version: "3.6"
   
       - name: Setup poetry
-        uses: abatilo/actions-poetry@main
+        uses: abatilo/actions-poetry@master
 
       - name: Update PATH
         if: ${{ matrix.platorm != 'windows-latest' }}
