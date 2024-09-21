@@ -96,9 +96,7 @@ class Converter:
             except NotPython:
                 if file_reporter.should_be_python():  # type: ignore[attr-defined]
                     if config.ignore_errors:
-                        msg = "Couldn't parse Python file '{}'".format(
-                            file_reporter.filename
-                        )
+                        msg = f"Couldn't parse Python file '{file_reporter.filename}'"
                         self.cov_obj._warn(  # pylint: disable=protected-access
                             msg, slug="couldnt-parse"
                         )
