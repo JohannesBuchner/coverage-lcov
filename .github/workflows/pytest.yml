@@ -4,8 +4,7 @@ name: PyTest On PR
 
 on:
   pull_request:
-    branches:
-      - master
+    branches: *
 
 jobs:
   test:
