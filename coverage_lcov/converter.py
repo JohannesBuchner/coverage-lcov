@@ -1,10 +1,10 @@
 import logging
-from typing import Any, List, Optional, Union
+from typing import Any, List, Optional, Union, Tuple
 
 import coverage
 from coverage.files import GlobMatcher, prep_patterns
 from coverage.misc import CoverageException, NoSource, NotPython
-from coverage.python import PythonFileReporter
+from coverage.plugin import FileReporter
 from coverage.results import Analysis
 
 log = logging.getLogger("coverage_lcov.converter")
@@ -25,9 +25,9 @@ class Converter:
         self.cov_obj.load()
         self.cov_obj.get_data()
 
-    def get_file_reporters(self) -> List[Union[PythonFileReporter, Any]]:
+    def get_file_reporters(self) -> List[Tuple[FileReporter, Any]]:
         file_reporters: List[
-            Union[PythonFileReporter, Any]
+            Tuple[FileReporter, Any]
         ] = self.cov_obj._get_file_reporters(  # pylint: disable=protected-access
             None
         )
@@ -94,7 +94,7 @@ class Converter:
                     raise
 
             except NotPython:
-                if file_reporter.should_be_python():
+                if file_reporter.should_be_python():  # type: ignore[attr-defined]
                     if config.ignore_errors:
                         msg = "Couldn't parse Python file '{}'".format(
                             file_reporter.filename
