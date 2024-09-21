@@ -38,6 +38,14 @@ warn_unused_ignores = true
 ignore_missing_imports = true
 strict_equality = true
 
+[project]
+dependencies = [
+    "types-toml",
+    "click>=7.1.2",
+    "coverage>=7.0",
+    "toml",
+]
+
 [tool.poetry]
 name = "coverage-lcov"
 version = "0.2.5"
@@ -49,12 +57,6 @@ authors = [
 repository = "https://github.com/JohannesBuchner/coverage-lcov"
 readme = "README.md"
 keywords = ["coverage"]
-dependencies = [
-    "types-toml",
-    "click>=7.1.2",
-    "coverage>=7.0",
-    "toml",
-]
 
 [tool.poetry.scripts]
 coverage-lcov = "coverage_lcov.cli:main"
