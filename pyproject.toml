@@ -38,7 +38,7 @@ warn_unused_ignores = true
 ignore_missing_imports = true
 strict_equality = true
 
-[project]
+[tool.pip]
 dependencies = [
     "types-toml",
     "click>=7.1.2",
