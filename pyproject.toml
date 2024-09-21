@@ -90,7 +90,6 @@ ignore = '**/site-packages'
 # init-hook = "import os, sys; workspace_root=os.path.realpath(os.path.join(os.path.dirname(__file__), '..', '..', '..', '..', '..', '..')); sys.path.append(workspace_root)"
 
 [tool.pylint.'MESSAGES CONTROL']
-enable = ['error', 'warning']
 disable = [
     'missing-class-docstring',
     'missing-function-docstring',
